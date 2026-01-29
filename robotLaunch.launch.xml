@@ -1,0 +1,16 @@
+<launch>
+    <!-- Define an argument to specify which task to run (default is task3) -->
+    <arg name="task" default="3" />
+
+    <!-- Launch the controller node -->
+    <node name="robot_controller" 
+          pkg="demo_programs" 
+          type="robotTask$(arg task).py" 
+          launch-prefix="python3" />
+
+    <!-- Launch the logger node -->
+    <node name="robot_logger" 
+          pkg="demo_programs" 
+          type="robotLogger.py" 
+          launch-prefix="python3" />
+</launch>
